@@ -147,8 +147,16 @@ ctx6.strokeStyle = 'white';
 ctx6.lineWidth = 16;
 
 
-let x = 25;
-let y = 40;
+let x = 125;
+let x2 = 147;
+let x3 = 269;
+let x4 = 247;
+
+
+let y = 100;
+let y2 = 78;
+let y3 = 250;
+
 
 const clearSqr = () => {
   ctx6.strokeStyle = 'black';
@@ -157,18 +165,55 @@ const clearSqr = () => {
   ctx6.strokeStyle = 'white';
 }
 const practicum = () => {
-  ctx6.moveTo(100 + x, 100 + y);
-  ctx6.lineTo(100 + x, 250 + y);
-  ctx6.closePath()
+    if (x >= canvas6.width) {
+        x = canvas6.width - x;
+    } else if (x < 0) {
+        x = canvas6.width;
+    }
+    if (x2 >= canvas6.width) {
+        x2 = canvas6.width - x2;
+    } else if (x2 < 0) {
+        x2 = canvas6.width;
+    }
+    if (x3 >= canvas6.width) {
+        x3 = canvas6.width - x3;
+    } else if (x3 < 0) {
+        x3 = canvas6.width;
+    }
+    if (x4 >= canvas6.width) {
+        x4 = canvas6.width - x4;
+    } else if (x4 < 0) {
+        x4 = canvas6.width;
+    }
 
-  ctx6.moveTo(122 + x, 78 + y);
-  ctx6.lineTo(222 + x, 78 + y);
-  ctx6.closePath()
+    if (y >= canvas6.height) {
+        y = canvas6.height - y;
+    } else if (y < 0) {
+        y = canvas6.height;
+    }
+    if (y2 >= canvas6.height) {
+        y2 = canvas6.height - y2;
+    } else if (y2 < 0) {
+        y2 = canvas6.height;
+    }
 
-  ctx6.moveTo(244 + x, 100 + y);
-  ctx6.lineTo(244 + x, 250 + y);
-  ctx6.closePath()
-  ctx6.stroke();
+    if (y3 >= canvas6.height) {
+        y3 = canvas6.height - y3;
+    } else if (y3 < 0) {
+        y3 = canvas6.height;
+    }
+    ctx6.moveTo(x, y);
+    ctx6.lineTo(x, y3);
+    ctx6.closePath()
+
+    ctx6.moveTo(x2, y2);
+    ctx6.lineTo(x4, y2);
+    ctx6.closePath()
+
+    ctx6.moveTo(x3, y);
+    ctx6.lineTo( x3, y3);
+    ctx6.closePath()
+    ctx6.stroke();
 }
 
 practicum();
@@ -177,22 +222,32 @@ document.addEventListener('keydown', (evt) => {
   if (evt.code === 'ArrowUp') {
     clearSqr();
     y -= 25;
+    y2 -= 25;
+    y3 -= 25;
     practicum();
   }
   if (evt.code === 'ArrowDown') {
     clearSqr();
     y += 25;
+    y2 += 25;
+    y3 += 25;
     practicum();
   }
 
   if (evt.code === 'ArrowLeft') {
     clearSqr();
     x -= 25;
+    x2 -= 25;
+    x3 -= 25;
+    x4 -= 25;
     practicum();
   }
   if (evt.code === 'ArrowRight') {
     clearSqr();
     x += 25;
+    x2 += 25;
+    x3 += 25;
+    x4 += 25
     practicum();
   }
 })
