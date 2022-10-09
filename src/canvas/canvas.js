@@ -204,15 +204,15 @@ const practicum = () => {
     }
     ctx6.moveTo(x, y);
     ctx6.lineTo(x, y3);
-    ctx6.closePath()
+    ctx6.closePath();
 
     ctx6.moveTo(x2, y2);
     ctx6.lineTo(x4, y2);
-    ctx6.closePath()
+    ctx6.closePath();
 
     ctx6.moveTo(x3, y);
     ctx6.lineTo( x3, y3);
-    ctx6.closePath()
+    ctx6.closePath();
     ctx6.stroke();
 }
 
