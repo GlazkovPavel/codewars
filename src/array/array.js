@@ -105,3 +105,76 @@ const result4 = getLengthOfMissingArray([[3, 0, 4, 4],
     [3, 3, 2, 3, 2, 0, 3, 1, 3, 2]])
 const span4 = document.querySelector('.span4');
 span4.innerHTML = result4;
+
+const data = [
+    {name: "Саша", age: 19},
+    {name: "Катя", age: 21},
+    {name: "Миша", age: 17},
+    {name: "Федя", age: 23},
+    {name: "Клава", age: 22}
+];
+
+
+function calcAvgAge(array) {
+
+    const sum = array.reduce((acc, currentValue) => acc + currentValue.age , 0);
+    const res = sum / array.length
+
+    console.log(Math.round(res));
+}
+calcAvgAge(data);
+
+
+const numbers = [1, 2, 3, 4, 5, 6];
+
+separateArray(numbers);
+// должен вернуть { even: [2, 4, 6], odd: [1, 3, 5] }
+
+function separateArray(array) {
+    const even = [];
+    const odd = [];
+    array.forEach((item) => {
+        if (item % 2 ===0) {
+            even.push(item)
+        } else {
+        odd.push(item);
+    }})
+
+    return {even, odd};
+}
+
+
+// const form = document.forms.formWithInput;
+// const printResult = document.querySelector('.content__result');
+// const inputNumber = document.querySelector('.form__input');
+// const congratulation = document.querySelector('#congratulation');
+//
+// function findNearestFactorial(value) {
+//     if (value === '' || value === undefined) {
+//         return '*';
+//     }
+//     if (value <= 0) {
+//         console.log(value);
+//         return 1;
+//     }
+//     let currentValue = 1;
+//     let n = 0;
+//     for (let i = 1; currentValue * i <= value; i++) {
+//         currentValue = i*currentValue;
+//         n = i
+//
+//     }
+//
+//     return n;
+// }
+//
+// form.addEventListener('keyup', evt => {
+//     evt.preventDefault();
+//     printResult.textContent = findNearestFactorial(inputNumber.value);
+//     congratulation.textContent = inputNumber.value && 'Вау, это успех!';
+// });
+//
+// form.addEventListener('submit', evt => {
+//     evt.preventDefault();
+//     findNearestFactorial(inputNumber)
+// });
