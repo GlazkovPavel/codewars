@@ -5,3 +5,5 @@ import "./string/string";
 import "./canvas/canvas";
 import "./canvas/canvas.css";
 import "./task";
+import "./object/object";
+import "./object/object3";
